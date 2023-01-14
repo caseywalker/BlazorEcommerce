@@ -7,9 +7,9 @@ namespace BlazorEcommerce.Server.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-		private static List<Products> products = new List<Products>
+		private static List<Product> products = new List<Product>
 	{
-		new Products
+		new Product
 		{
 			Id = 1,
 			Title = "Game",
@@ -17,7 +17,7 @@ namespace BlazorEcommerce.Server.Controllers
 			ImageUrl = "https://m.media-amazon.com/images/I/517pFeCNrJL._AC_SY1000_.jpg",
 			Price = 59.99m
 		},
-		new Products
+		new Product
 		{
 			Id = 2,
 			Title = "DVD",
@@ -25,7 +25,7 @@ namespace BlazorEcommerce.Server.Controllers
 			ImageUrl = "https://upload.wikimedia.org/wikipedia/en/2/21/Web_of_Spider-Man_Vol_1_129-1.png",
 			Price = 19.99m
 		},
-		new Products
+		new Product
 		{
 			Id = 3,
 			Title = "Book",
@@ -33,7 +33,7 @@ namespace BlazorEcommerce.Server.Controllers
 			ImageUrl = "http://prodimage.images-bn.com/pimages/9780345806796_p0_v1_s1200x630.jpg",
 			Price = 9.99m
 		},
-		new Products
+		new Product
 		{
 			Id = 4,
 			Title = "Hockey Stick",
@@ -41,7 +41,7 @@ namespace BlazorEcommerce.Server.Controllers
 			ImageUrl = "https://images.purehockey.com/img.aspx?pic_id=95558&pic_type=4",
 			Price = 99.99m
 		},
-		new Products
+		new Product
 		{
 			Id = 5,
 			Title = "Dog Food",
@@ -52,7 +52,7 @@ namespace BlazorEcommerce.Server.Controllers
 	};
 
 		[HttpGet]
-		public async Task<ActionResult<List<Products>>> GetAllProducts()
+		public async Task<ActionResult<List<Product>>> GetAllProducts()
         {
 			return Ok(products);
         }
