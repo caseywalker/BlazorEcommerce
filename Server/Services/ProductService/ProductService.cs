@@ -28,6 +28,7 @@
 			}
 			else
 			{
+				response.Success = true;
 				response.Data = product;
 			}
 			return response;
