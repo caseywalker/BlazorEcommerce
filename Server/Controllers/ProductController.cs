@@ -17,8 +17,15 @@ namespace BlazorEcommerce.Server.Controllers
 		[HttpGet]
 		public async Task<ActionResult<List<Product>>> GetAllProducts()
 		{
-			var result = await _productService.GetProductAsync();
+			var result = await _productService.GetProductsAsync();
 			return Ok(result);
 		}
-	}
+
+		[HttpGet("{productId}")]
+        public async Task<ActionResult<Product>> GetSingleProduct(int productId)
+        {
+            var result = await _productService.GetProductAsync(productId);
+            return Ok(result);
+        }
+    }
 }
