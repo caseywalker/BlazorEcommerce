@@ -4,20 +4,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BlazorEcommerce.Server.Controllers
 {
-  [Route("api/[controller]")]
-  [ApiController]
-  public class ProductController : ControllerBase
-  {
-    private readonly DataContext _context;
-    public ProductController(DataContext context)
-    {
-      _context = context;
-    }
-    [HttpGet]
-    public async Task<ActionResult<List<Product>>> GetAllProducts()
-    {
-      var products = await _context.Products.ToListAsync();
-      return Ok(products);
-    }
-  }
+	[Route("api/[controller]")]
+	[ApiController]
+	public class ProductController : ControllerBase
+	{
+		private readonly IProductService _productService;
+
+		public ProductController(IProductService productService)
+		{
+			_productService = productService;
+		}
+		[HttpGet]
+		public async Task<ActionResult<List<Product>>> GetAllProducts()
+		{
+			var result = await _productService.GetProductAsync();
+			return Ok(result);
+		}
+	}
 }
