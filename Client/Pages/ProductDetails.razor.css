@@ -15,9 +15,12 @@
   .media-img {
     max-width: 300px;
   }
+    .media {
+      flex-direction: column;
+    }
 
-  .media-img-wrapper {
-    width: 100%;
-    height: auto;
+    .media-img-wrapper {
+      width: 100%;
+      height: auto;
+    }
   }
-}
